@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Próximos Partidos - DT Zone</title>
+
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --azul-chelsea: #012169;
+            --azul-claro: #0a3aa3;
+            --dorado: #c9a23f;
+            --blanco: #ffffff;
+            --gris: #f4f4f4;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--gris);
+            color: #222;
+        }
+
+        header {
+            background: var(--azul-chelsea);
+            padding: 25px;
+            text-align: center;
+            color: var(--blanco);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .mes {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 40px;
+            color: var(--azul-chelsea);
+            border-left: 6px solid var(--dorado);
+            padding-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--blanco);
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--azul-chelsea);
+            color: var(--blanco);
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.95rem;
+            vertical-align: middle;
+        }
+
+        tr:hover td {
+            background: var(--azul-claro);
+            color: white;
+        }
+
+        /* ESCUDOS */
+        .escudo {
+            width: 28px;
+            vertical-align: middle;
+            margin: 0 6px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 650px) {
+            th:nth-child(3), td:nth-child(3),
+            th:nth-child(4), td:nth-child(4) {
+                display: none;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .mes {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Próximos Partidos del Chelsea</h1>
+</header>
+
+<main>
+
+    <!-- DICIEMBRE -->
+    <section>
+        <h2 class="mes">Diciembre, 2025</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>PARTIDO</th>
+                    <th>HORA</th>
+                    <th>COMPETENCIA</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Mié., 3 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="leeds.png"> Leeds United
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>4:15 PM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Sáb., 6 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="bournemouth.png"> AFC Bournemouth
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>11:00 AM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mar., 9 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="atalanta.png"> Atalanta
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>4:00 PM</td>
+                    <td>UEFA Champions League</td>
+                </tr>
+
+                <tr>
+                    <td>Sáb., 13 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                        <strong>vs</strong>
+                        <img class="escudo" src="everton.png"> Everton
+                    </td>
+                    <td>11:00 AM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mar., 16 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="cardiff.png"> Cardiff City
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>4:00 PM</td>
+                    <td>Carabao Cup</td>
+                </tr>
+
+                <tr>
+                    <td>Sáb., 20 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="newcastle.png"> Newcastle United
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>8:30 AM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Sáb., 27 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                        <strong>vs</strong>
+                        <img class="escudo" src="astonvilla.png"> Aston Villa
+                    </td>
+                    <td>1:30 PM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mar., 30 de Dic.</td>
+                    <td>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                        <strong>vs</strong>
+                        <img class="escudo" src="bournemouth.png"> AFC Bournemouth
+                    </td>
+                    <td>3:30 PM</td>
+                    <td>Premier League</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ENERO -->
+    <section>
+        <h2 class="mes">Enero, 2026</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>FECHA</th>
+                    <th>PARTIDO</th>
+                    <th>HORA</th>
+                    <th>COMPETENCIA</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Dom., 4 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="mancity.png"> Manchester City
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>1:30 PM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mié., 7 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="fulham.png"> Fulham
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>3:30 PM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Sáb., 17 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                        <strong>vs</strong>
+                        <img class="escudo" src="brentford.png"> Brentford
+                    </td>
+                    <td>11:00 AM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mié., 21 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                        <strong>vs</strong>
+                        <img class="escudo" src="pafos.png"> Pafos
+                    </td>
+                    <td>4:00 PM</td>
+                    <td>UEFA Champions League</td>
+                </tr>
+
+                <tr>
+                    <td>Dom., 25 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="crystalpalace.png"> Crystal Palace
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>10:00 AM</td>
+                    <td>Premier League</td>
+                </tr>
+
+                <tr>
+                    <td>Mié., 28 de Ene.</td>
+                    <td>
+                        <img class="escudo" src="napoli.png"> Napoli
+                        <strong>vs</strong>
+                        <img class="escudo" src="chelsea.png"> Chelsea
+                    </td>
+                    <td>4:00 PM</td>
+                    <td>UEFA Champions League</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 DT Zone | Próximos Partidos</p>
+</footer>
+
+</body>
+</html>
