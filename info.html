@@ -3,9 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Noticias del Chelsea - DT Zone</title>
+
+    <style>
+        /* ====== ESTILOS GENERALES ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-chelsea: #012169;
+            --dorado: #c9a23f;
+            --fondo: #f4f4f4;
+            --texto: #222;
+        }
+
+        body {
+            background: var(--fondo);
+            font-family: Arial, sans-serif;
+            color: var(--texto);
+        }
+
+        header {
+            background: var(--azul-chelsea);
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* ====== TARJETAS DE NOTICIAS ====== */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 20px;
+        }
+
+        article {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .categoria {
+            color: var(--dorado);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .fecha {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: var(--azul-chelsea);
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: var(--azul-chelsea);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Noticias del Chelsea FC</h1>
+    </header>
+    <main>
+        <section class="news-container">
+            <article>
+                <img src="noticia1.jpg" alt="Gol del mes Chelsea">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">02 Dic 2025</div>
+                <h2>Vota por el Gol del Mes de Noviembre</h2>
+                <p>El Chelsea abrió las votaciones oficiales para elegir la mejor anotación del mes entre varios candidatos destacados.</p>
+            </article>
+
+            <article>
+                <img src="noticia2.jpg" alt="Essugo y Caicedo actualización">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">02 Dic 2025</div>
+                <h2>Actualización sobre Essugo y la suspensión de Caicedo</h2>
+                <p>Maresca aclaró la situación médica del joven centrocampista y el impacto que tendrá la ausencia de Caicedo en el siguiente encuentro.</p>
+            </article>
+
+            <article>
+                <img src="noticia3.jpg" alt="Reece James">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">01 Dic 2025</div>
+                <h2>Reece James: Jugador del Partido frente al Arsenal</h2>
+                <p>El capitán brilló con una actuación sólida, liderando al equipo en defensa y aportando presencia ofensiva cuando fue necesario.</p>
+            </article>
+
+            <article>
+                <img src="noticia4.jpg" alt="João Pedro Chelsea">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">01 Dic 2025</div>
+                <h2>João Pedro valora el esfuerzo del equipo</h2>
+                <p>El delantero elogió el desempeño colectivo y resaltó la actitud del grupo para sacar puntos importantes en la temporada.</p>
+            </article>
+
+            <article>
+                <img src="noticia5.jpg" alt="Jugadora del Mes">
+                <div class="categoria">Equipo Femenino</div>
+                <div class="fecha">27 Nov 2025</div>
+                <h2>Jugadora del Mes: Chelsea Women anuncia a la ganadora</h2>
+                <p>La futbolista fue clave en varios triunfos y su liderazgo destacó a lo largo del mes.</p>
+            </article>
+
+            <article>
+                <img src="noticia6.jpg" alt="Enzo Fernández y Cucurella">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">27 Nov 2025</div>
+                <h2>Enzo Fernández destaca la influencia de Cucurella</h2>
+                <p>El argentino elogió la intensidad y contribución del defensor español dentro del equipo.</p>
+            </article>
+
+            <article>
+                <img src="noticia7.jpg" alt="Sonia Bompastor">
+                <div class="categoria">Equipo Femenino</div>
+                <div class="fecha">27 Nov 2025</div>
+                <h2>Sonia Bompastor y la importancia de confiar en el proceso</h2>
+                <p>Bompastor reafirmó que el proyecto deportivo sigue un camino sólido y con resultados visibles.</p>
+            </article>
+
+            <article>
+                <img src="Captura3.JPG" alt="Estevao Willian">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">27 Nov 2025</div>
+                <h2>Estevao Willian: “Todo debe hacerse con amor”</h2>
+                <p>El joven talento habló sobre su motivación y compromiso con el Chelsea.</p>
+            </article>
+
+            <article>
+                <img src="Captura4.JPG" alt="Enzo Maresca">
+                <div class="categoria">Primer Equipo</div>
+                <div class="fecha">27 Nov 2025</div>
+                <h2>Enzo Maresca: “Los necesitaremos contra el Arsenal”</h2>
+                <p>El entrenador pidió a los aficionados un apoyo clave para los próximos partidos.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 DT Zone | Noticias del Chelsea FC</p>
+    </footer>
 </body>
 </html>

@@ -1,394 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>DT Zone</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>DT Zone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-/* ============================= */
-/* PALETA DE COLORES */
-/* ============================= */
-:root {
-    --azul-oscuro: #061f4a;
-    --azul-medio: #0b2f6e;
-    --azul-claro: #0f3c94;
-    --amarillo: #f4d03f;
-    --blanco: #ffffff;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ============================= */
-/* GLOBAL */
-/* ============================= */
- * {
-         margin: 0;
-        padding: 0;
-         box-sizing: border-box;
-    }
-body {
-    margin: 0;
-    background: var(--azul-oscuro);
-    color: var(--blanco);
-    font-family: 'Poppins', sans-serif;
-}
+        :root {
+            --azul-oscuro: #061f4a;
+            --azul-medio: #0b2f6e;
+            --azul-claro: #0f3c94;
+            --amarillo: #f4d03f;
+            --blanco: #ffffff;
+        }
 
-/* ============================= */
-/* HEADER – NAVBAR */
-/* ============================= */
-header {
-    background: var(--azul-oscuro);
-    padding: 18px 50px;
-    border-bottom: 3px solid var(--azul-claro);
-}
+        body {
+            margin: 0;
+            background: var(--azul-oscuro);
+            color: var(--blanco);
+            font-family: 'Poppins', sans-serif;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header {
+            background: var(--azul-oscuro);
+            padding: 18px 50px;
+            border-bottom: 3px solid var(--azul-claro);
+        }
 
-nav .brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav img {
-    width: 65px;
-}
+        nav .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-nav h1 {
-    font-size: 42px;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--amarillo);
-    margin: 0;
-}
+        nav img {
+            width: 65px;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    padding: 0;
-    margin: 0;
-}
+        nav h1 {
+            font-size: 42px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--amarillo);
+            margin: 0;
+        }
 
-nav a {
-    text-decoration: none;
-    color: var(--blanco);
-    font-size: 18px;
-    font-weight: 500;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+        }
 
-nav a:hover {
-    color: var(--amarillo);
-}
+        nav a {
+            text-decoration: none;
+            color: var(--blanco);
+            font-size: 18px;
+            font-weight: 500;
+        }
 
-/* ============================= */
-/* VIDEOS + NOTICIAS */
-/* ============================= */
-#videos {
-    padding: 40px 60px;
-}
+        nav a:hover {
+            color: var(--amarillo);
+        }
 
-#videos h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-}
+        #videos {
+            padding: 40px 60px;
+        }
 
-#videos .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
+        #videos h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
 
-#videos article {
-    background: var(--azul-medio);
-    padding: 15px;
-    border-radius: 12px;
-    transition: .2s;
-}
+        #videos .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
 
-#videos article:hover {
-    transform: scale(1.05);
-}
+        #videos article {
+            background: var(--azul-medio);
+            padding: 15px;
+            border-radius: 12px;
+            transition: .2s;
+        }
 
-#videos img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-}
+        #videos article:hover {
+            transform: scale(1.05);
+        }
 
-#videos p {
-    margin-top: 10px;
-    font-size: 17px;
-    line-height: 1.4;
-}
+        #videos img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
 
-/* ============================= */
-/* PRÓXIMOS PARTIDOS */
-/* ============================= */
-#partidos {
-    background: var(--azul-claro);
-    padding: 30px;
-    border-radius: 12px;
-    margin-top: 40px;
-}
+        #videos p {
+            margin-top: 10px;
+            font-size: 17px;
+            line-height: 1.4;
+        }
 
-#partidos h2 {
-    font-size: 30px;
-}
+        #partidos {
+            background: var(--azul-claro);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
 
-#partidos h3 {
-    margin-top: 25px;
-    font-size: 22px;
-}
+        #partidos h2 {
+            font-size: 30px;
+        }
 
-table {
-    width: 100%;
-    background: var(--azul-medio);
-    border-collapse: collapse;
-    margin-top: 10px;
-}
+        #partidos h3 {
+            margin-top: 25px;
+            font-size: 22px;
+        }
 
-table th {
-    background: #143f93;
-}
+        table {
+            width: 100%;
+            background: var(--azul-medio);
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
 
-table th, table td {
-    padding: 12px;
-}
+        table th {
+            background: #143f93;
+        }
 
-table tr:hover td {
-    background: #1a4fb1;
-}
+        table th,
+        table td {
+            padding: 12px;
+        }
 
-/* ============================= */
-/* HISTORIA */
-/* ============================= */
-#historia-title {
-    font-size: 32px;
-    margin: 40px 60px 10px;
-}
+        table tr:hover td {
+            background: #1a4fb1;
+        }
 
-#historia {
-    display: flex;
-    padding: 40px 60px;
-    gap: 40px;
-}
+        #historia-title {
+            font-size: 32px;
+            margin: 40px 60px 10px;
+        }
 
-#historia article {
-    width: 60%;
-    font-size: 18px;
-    line-height: 1.8;
-}
+        #historia {
+            display: flex;
+            padding: 40px 60px;
+            gap: 40px;
+        }
 
-#historia figure img {
-    width: 100%;
-    max-width: 430px;
-    border-radius: 10px;
-}
+        #historia article {
+            width: 60%;
+            font-size: 18px;
+            line-height: 1.8;
+        }
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-footer {
-    margin-top: 50px;
-    background: var(--azul-medio);
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-}
+        #historia figure img {
+            width: 100%;
+            max-width: 430px;
+            border-radius: 10px;
+        }
 
-/* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
+        footer {
+            margin-top: 50px;
+            background: var(--azul-medio);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
 
-/* Tablets */
-@media (max-width: 1000px) {
-    #videos .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+        @media (max-width: 1000px) {
+            #videos .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-/* Celulares */
-@media (max-width: 700px) {
-    nav h1 { font-size: 30px; }
-    nav img { width: 50px; }
-    nav ul { display: none; }
+        @media (max-width: 700px) {
+            nav h1 {
+                font-size: 30px;
+            }
 
-    #videos {
-        padding: 25px;
-    }
+            nav img {
+                width: 50px;
+            }
 
-    #videos h2 { text-align: center; }
+            nav ul {
+                display: none;
+            }
 
-    #videos .grid {
-        grid-template-columns: 1fr;
-    }
+            #videos {
+                padding: 25px;
+            }
 
-    #partidos {
-        padding: 20px;
-    }
+            #videos h2 {
+                text-align: center;
+            }
 
-    #historia {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-    }
+            #videos .grid {
+                grid-template-columns: 1fr;
+            }
 
-    #historia article {
-        width: 100%;
-    }
+            #partidos {
+                padding: 20px;
+            }
 
-    #historia figure img {
-        margin: auto;
-    }
-}
+            #historia {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+            }
+
+            #historia article {
+                width: 100%;
+            }
+
+            #historia figure img {
+                margin: auto;
+            }
+        }
     </style>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <div class="brand">
+                <img src="logo.png" alt="Logo DT">
+                <h1>DT Zone</h1>
+            </div>
+            <ul>
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="partidos.html">PARTIDOS</a></li>
+                <li><a href="info.html">INFORMACIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="videos">
+            <h2>Noticias y videos del equipo</h2>
+            <div class="grid">
 
-<header>
-    <nav>
-        <div class="brand">
-            <img src="logo.png" alt="Logo DT">
-            <h1>DT Zone</h1>
-        </div>
+                <article>
+                    <img src="Captura1.JPG" alt="">
+                    <p>UCL partido completo: Chelsea 3–0 Barcelona</p>
+                </article>
 
-        <ul>
-            <li><a href="#">VIDEOS</a></li>
-            <li><a href="historia.html">HISTORIA</a></li>
-            <li><a href="partidos.html">PARTIDOS</a></li>
-            <li><a href="#">INFORMACIÓN</a></li>
-        </ul>
-    </nav>
-</header>
+                <article>
+                    <img src="Captura3.JPG" alt="">
+                    <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
+                </article>
 
-<main>
+                <article>
+                    <img src="Captura4.JPG" alt="">
+                    <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
+                </article>
 
-<!-- ========================== -->
-<!-- NOTICIAS / VIDEOS -->
-<!-- ========================== -->
-<section id="videos">
+                <article>
+                    <img src="Captura5.JPG" alt="">
+                    <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
+                </article>
+            </div>
+            <section id="partidos">
+                <h2>Próximos partidos</h2>
+                <h3>Noviembre, 2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FECHA</th>
+                            <th>PARTIDO</th>
+                            <th>HORA</th>
+                            <th>COMPETENCIA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dom., 30 Nov.</td>
+                            <td>Chelsea vs Arsenal</td>
+                            <td>12:30 PM</td>
+                            <td>Premier League</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Diciembre, 2025</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Mié., 3 Dic.</td>
+                            <td>Leeds United vs Chelsea</td>
+                            <td>4:15 PM</td>
+                            <td>Premier League</td>
+                        </tr>
 
-    <h2>Noticias y videos del equipo</h2>
+                        <tr>
+                            <td>Sáb., 6 Dic.</td>
+                            <td>AFC Bournemouth vs Chelsea</td>
+                            <td>11:00 AM</td>
+                            <td>Premier League</td>
+                        </tr>
 
-    <div class="grid">
-
-        <article>
-            <img src="Captura1.JPG" alt="">
-            <p>UCL partido completo: Chelsea 3–0 Barcelona</p>
-        </article>
-
-        <article>
-            <img src="Captura3.JPG" alt="">
-            <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
-        </article>
-
-        <article>
-            <img src="Captura4.JPG" alt="">
-            <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
-        </article>
-
-        <article>
-            <img src="Captura5.JPG" alt="">
-            <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
-        </article>
-
-    </div>
-
-    <!-- PARTIDOS -->
-    <section id="partidos">
-
-        <h2>Próximos partidos</h2>
-
-        <h3>Noviembre, 2025</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>FECHA</th>
-                    <th>PARTIDO</th>
-                    <th>HORA</th>
-                    <th>COMPETENCIA</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Dom., 30 Nov.</td>
-                    <td>Chelsea vs Arsenal</td>
-                    <td>12:30 PM</td>
-                    <td>Premier League</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Diciembre, 2025</h3>
-
-        <table>
-            <tbody>
-                <tr>
-                    <td>Mié., 3 Dic.</td>
-                    <td>Leeds United vs Chelsea</td>
-                    <td>4:15 PM</td>
-                    <td>Premier League</td>
-                </tr>
-
-                <tr>
-                    <td>Sáb., 6 Dic.</td>
-                    <td>AFC Bournemouth vs Chelsea</td>
-                    <td>11:00 AM</td>
-                    <td>Premier League</td>
-                </tr>
-
-                <tr>
-                    <td>Mar., 9 Dic.</td>
-                    <td>Atalanta vs Chelsea</td>
-                    <td>4:00 PM</td>
-                    <td>UEFA Champions League</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </section>
-
-</section>
-
-<!-- ========================== -->
-<!-- HISTORIA -->
-<!-- ========================== -->
-<h2 id="historia-title">La Primera Corona Europea del Chelsea</h2>
-
-<section id="historia">
-
-    <article>
-        <p>
-            En 2012, el Chelsea sorprendió al mundo al conquistar su primera Champions League.
-            Tras una temporada difícil, el equipo llegó a la final en Múnich como el “no favorito”.
-            El Bayern dominó, pero el Chelsea resistió con una defensa heroica y un Petr Čech brillante.
-            <br><br>
-            A pocos minutos del final, cuando los alemanes ganaban 1–0, Didier Drogba empató con un cabezazo inolvidable.
-            En la prórroga, Čech atajó un penal clave y todo se definió en los penales. Drogba anotó el tiro final y selló la hazaña.
-            <br><br>
-            Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo.
-        </p>
-    </article>
-
-    <figure>
-        <img src="Captura2.JPG" alt="Chelsea campeón 2012">
-    </figure>
-
-</section>
-
-</main>
-
-<footer>
-    &copy; 2025 DT Zone | Todos los derechos reservados.
-</footer>
-
+                        <tr>
+                            <td>Mar., 9 Dic.</td>
+                            <td>Atalanta vs Chelsea</td>
+                            <td>4:00 PM</td>
+                            <td>UEFA Champions League</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <h2 id="historia-title">La Primera Corona Europea del Chelsea</h2>
+        <section id="historia">
+            <article>
+                <p>
+                    En 2012, el Chelsea sorprendió al mundo al conquistar su primera Champions League.
+                    Tras una temporada difícil, el equipo llegó a la final en Múnich como el “no favorito”.
+                    El Bayern dominó, pero el Chelsea resistió con una defensa heroica y un Petr Čech brillante.
+                    <br><br>
+                    A pocos minutos del final, cuando los alemanes ganaban 1-0, Didier Drogba empató con un cabezazo inolvidable.
+                    En la prórroga, Čech atajó un penal clave y todo se definió en los penales. Drogba anotó el tiro final y selló la hazaña.
+                    <br><br>
+                    Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo.
+                </p>
+            </article>
+            <figure>
+                <img src="Captura2.JPG" alt="Chelsea campeón 2012">
+            </figure>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 DT Zone | Todos los derechos reservados.
+    </footer>
 </body>
 </html>
