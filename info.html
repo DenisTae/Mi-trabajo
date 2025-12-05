@@ -5,165 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias del Chelsea - DT Zone</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #f4f4f4;
-            font-family: Arial, sans-serif;
-            color: #222;
-        }
-        header {
-            background: #012169;
-            color: white;
-            text-align: center;
-            padding: 25px 0;
-        }
-        header h1 {
-            font-size: 2rem;
-        }
-        main {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        .news-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 20px;
-        }
-        article {
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        article img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 12px;
-        }
-        .categoria {
-            color: #c9a23f;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        .fecha {
-            font-size: 0.85rem;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        h2 {
-            color: #012169;
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-        p {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-        }
-        footer {
-            background: #012169;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+    * { margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1rem;
-            }
-        }
-</style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    header {
+        background-color: #012169;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header .logo img {
+        width: 40px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    header .logo img:hover { transform: rotate(10deg); }
+
+    header .logo h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #C9A23F;
+    }
+
+    header .logo h2 {
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #ffffff;
+    }
+
+    #btn-home {
+        padding: 7px 15px;
+        background: #C9A23F;
+        color: #012169;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #btn-home:hover { background: #f4d03f; }
+
+    main {
+        max-width: 1000px;
+        margin: 90px auto 20px;
+        padding: 0 20px;
+    }
+
+    .news-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 20px;
+    }
+
+    article {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s forwards;
+    }
+
+    article img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    article img:hover { transform: scale(1.05); }
+
+    .categoria {
+        color: #C9A23F;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .fecha {
+        font-size: 0.85rem;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        color: #012169;
+        margin: 10px 0;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+    }
+
+    h2:hover { color: #0144a5; }
+
+    p { font-size: 0.95rem; margin-bottom: 10px; }
+
+    footer {
+        background: #012169;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+        header h1, header h2 { font-size: 1rem; }
+        #btn-home { padding: 5px 10px; font-size: 0.9rem; }
+        h2 { font-size: 1rem; }
+    }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Noticias del Chelsea FC</h1>
-    </header>
-    <main>
-        <section class="news-container">
-            <article>
-                <img src="noticia1.jpg" alt="Gol del mes Chelsea">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">02 Dic 2025</div>
-                <h2>Vota por el Gol del Mes de Noviembre</h2>
-                <p>El Chelsea abrió las votaciones oficiales para elegir la mejor anotación del mes entre varios candidatos destacados.</p>
-            </article>
 
-            <article>
-                <img src="noticia2.jpg" alt="Essugo y Caicedo actualización">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">02 Dic 2025</div>
-                <h2>Actualización sobre Essugo y la suspensión de Caicedo</h2>
-                <p>Maresca aclaró la situación médica del joven centrocampista y el impacto que tendrá la ausencia de Caicedo en el siguiente encuentro.</p>
-            </article>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="DT Logo" onclick="goHome()">
+        <h1>DT Zone</h1>
+        <h2>NOTICIAS</h2>
+    </div>
+    <button id="btn-home" onclick="goHome()">← Principal</button>
+</header>
 
-            <article>
-                <img src="noticia3.jpg" alt="Reece James">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">01 Dic 2025</div>
-                <h2>Reece James: Jugador del Partido frente al Arsenal</h2>
-                <p>El capitán brilló con una actuación sólida, liderando al equipo en defensa y aportando presencia ofensiva cuando fue necesario.</p>
-            </article>
+<main>
+    <section class="news-container">
+        <article>
+            <img src="noticia1.jpg" alt="Gol del mes Chelsea">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">02 Dic 2025</div>
+            <h2>Vota por el Gol del Mes de Noviembre</h2>
+            <p>El Chelsea abrió las votaciones oficiales para elegir la mejor anotación del mes entre varios candidatos destacados.</p>
+        </article>
 
-            <article>
-                <img src="noticia4.jpg" alt="João Pedro Chelsea">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">01 Dic 2025</div>
-                <h2>João Pedro valora el esfuerzo del equipo</h2>
-                <p>El delantero elogió el desempeño colectivo y resaltó la actitud del grupo para sacar puntos importantes en la temporada.</p>
-            </article>
+        <article>
+            <img src="noticia2.jpg" alt="Essugo y Caicedo actualización">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">02 Dic 2025</div>
+            <h2>Actualización sobre Essugo y la suspensión de Caicedo</h2>
+            <p>Maresca aclaró la situación médica del joven centrocampista y el impacto que tendrá la ausencia de Caicedo en el siguiente encuentro.</p>
+        </article>
 
-            <article>
-                <img src="noticia5.jpg" alt="Jugadora del Mes">
-                <div class="categoria">Equipo Femenino</div>
-                <div class="fecha">27 Nov 2025</div>
-                <h2>Jugadora del Mes: Chelsea Women anuncia a la ganadora</h2>
-                <p>La futbolista fue clave en varios triunfos y su liderazgo destacó a lo largo del mes.</p>
-            </article>
+        <article>
+            <img src="noticia3.jpg" alt="Reece James">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">01 Dic 2025</div>
+            <h2>Reece James: Jugador del Partido frente al Arsenal</h2>
+            <p>El capitán brilló con una actuación sólida, liderando al equipo en defensa y aportando presencia ofensiva cuando fue necesario.</p>
+        </article>
 
-            <article>
-                <img src="noticia6.jpg" alt="Enzo Fernández y Cucurella">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">27 Nov 2025</div>
-                <h2>Enzo Fernández destaca la influencia de Cucurella</h2>
-                <p>El argentino elogió la intensidad y contribución del defensor español dentro del equipo.</p>
-            </article>
+        <article>
+            <img src="noticia4.jpg" alt="João Pedro Chelsea">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">01 Dic 2025</div>
+            <h2>João Pedro valora el esfuerzo del equipo</h2>
+            <p>El delantero elogió el desempeño colectivo y resaltó la actitud del grupo para sacar puntos importantes en la temporada.</p>
+        </article>
 
-            <article>
-                <img src="noticia7.jpg" alt="Sonia Bompastor">
-                <div class="categoria">Equipo Femenino</div>
-                <div class="fecha">27 Nov 2025</div>
-                <h2>Sonia Bompastor y la importancia de confiar en el proceso</h2>
-                <p>Bompastor reafirmó que el proyecto deportivo sigue un camino sólido y con resultados visibles.</p>
-            </article>
+        <article>
+            <img src="noticia5.jpg" alt="Jugadora del Mes">
+            <div class="categoria">Equipo Femenino</div>
+            <div class="fecha">27 Nov 2025</div>
+            <h2>Jugadora del Mes: Chelsea Women anuncia a la ganadora</h2>
+            <p>La futbolista fue clave en varios triunfos y su liderazgo destacó a lo largo del mes.</p>
+        </article>
 
-            <article>
-                <img src="Captura3.JPG" alt="Estevao Willian">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">27 Nov 2025</div>
-                <h2>Estevao Willian: “Todo debe hacerse con amor”</h2>
-                <p>El joven talento habló sobre su motivación y compromiso con el Chelsea.</p>
-            </article>
+        <article>
+            <img src="noticia6.jpg" alt="Enzo Fernández y Cucurella">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">27 Nov 2025</div>
+            <h2>Enzo Fernández destaca la influencia de Cucurella</h2>
+            <p>El argentino elogió la intensidad y contribución del defensor español dentro del equipo.</p>
+        </article>
 
-            <article>
-                <img src="Captura4.JPG" alt="Enzo Maresca">
-                <div class="categoria">Primer Equipo</div>
-                <div class="fecha">27 Nov 2025</div>
-                <h2>Enzo Maresca: “Los necesitaremos contra el Arsenal”</h2>
-                <p>El entrenador pidió a los aficionados un apoyo clave para los próximos partidos.</p>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 DT Zone | Noticias del Chelsea FC</p>
-    </footer>
+        <article>
+            <img src="noticia7.jpg" alt="Sonia Bompastor">
+            <div class="categoria">Equipo Femenino</div>
+            <div class="fecha">27 Nov 2025</div>
+            <h2>Sonia Bompastor y la importancia de confiar en el proceso</h2>
+            <p>Bompastor reafirmó que el proyecto deportivo sigue un camino sólido y con resultados visibles.</p>
+        </article>
+
+        <article>
+            <img src="Captura3.JPG" alt="Estevao Willian">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">27 Nov 2025</div>
+            <h2>Estevao Willian: “Todo debe hacerse con amor”</h2>
+            <p>El joven talento habló sobre su motivación y compromiso con el Chelsea.</p>
+        </article>
+
+        <article>
+            <img src="Captura4.JPG" alt="Enzo Maresca">
+            <div class="categoria">Primer Equipo</div>
+            <div class="fecha">27 Nov 2025</div>
+            <h2>Enzo Maresca: “Los necesitaremos contra el Arsenal”</h2>
+            <p>El entrenador pidió a los aficionados un apoyo clave para los próximos partidos.</p>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 DT Zone | Noticias del Chelsea FC</p>
+</footer>
+
+<script>
+function goHome() {
+    window.location.href = "index.html";
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.animation = "fadeIn 1s forwards";
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('article').forEach(article => observer.observe(article));
+
+document.querySelectorAll('article img').forEach(img => {
+    img.addEventListener('click', () => {
+        const src = img.getAttribute('src');
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = 0;
+        modal.style.left = 0;
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.background = 'rgba(0,0,0,0.8)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.cursor = 'pointer';
+        modal.innerHTML = `<img src="${src}" style="max-width:90%; max-height:90%; border-radius:10px;">`;
+        document.body.appendChild(modal);
+        modal.addEventListener('click', () => modal.remove());
+    });
+});
+</script>
 </body>
 </html>
