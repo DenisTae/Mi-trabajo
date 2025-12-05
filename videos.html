@@ -4,84 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos - DT Zone</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f2f2f2;
-            color: #222;
-            line-height: 1.6;
-        }
-        header {
-            background: #012169;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #012169;
-            border-left: 6px solid #C9A23F;
-            padding-left: 10px;
-            margin-bottom: 20px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-        }
-        .video-container video {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        footer {
-            background: #012169;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-        }
-</style>
+    * { margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        opacity: 0;
+        animation: bodyFade 0.8s ease-out forwards;
+    }
+
+    @keyframes bodyFade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    header {
+        background-color: #012169;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: padding 0.3s, background 0.3s;
+    }
+
+    header.scrolled {
+        padding: 8px 20px;
+        background-color: #001645;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header .logo img {
+        width: 40px;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+    }
+
+    header .logo img:hover { 
+        transform: rotate(12deg) scale(1.1); 
+    }
+
+    header .logo h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #C9A23F; 
+        animation: slideInLeft 0.6s ease-out forwards;
+        opacity: 0;
+    }
+
+    header .logo h2 {
+        font-size: 1.4rem;
+        color: #ffffff; 
+        animation: slideInLeft 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-40px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    #btn-home {
+        padding: 7px 15px;
+        background: #C9A23F;
+        color: #012169;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+        animation: fadeDown 0.7s ease-out forwards;
+        opacity: 0;
+    }
+
+    #btn-home:hover {
+        background: #e0b650;
+        transform: scale(1.07);
+    }
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 90px auto 20px;
+        padding: 0 20px;
+    }
+
+    .titulo-video {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-top: 40px;
+        color: #012169;
+        border-left: 6px solid #C9A23F;
+        padding-left: 10px;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .video-container {
+        margin-top: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        opacity: 0;
+        transform: translateY(30px);
+        transition: transform 0.4s;
+    }
+
+    .video-container:hover {
+        transform: scale(1.01);
+    }
+
+    video {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.4s ease;
+    }
+
+    video:hover {
+        transform: scale(1.03);
+    }
+
+    .controls {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .controls button {
+        padding: 10px 15px;
+        background: #012169;
+        color: white;
+        border-radius: 6px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .controls button:hover {
+        background: #0a2d99;
+        transform: scale(1.05);
+    }
+
+    .controls button:active {
+        transform: scale(0.92);
+    }
+
+    footer {
+        background: #012169;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 650px) {
+        header .logo h1, header .logo h2 { font-size: 1rem; }
+        #btn-home { padding: 5px 10px; font-size: 0.9rem; }
+        .titulo-video { font-size: 1.3rem; }
+    }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Videos del Equipo</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Resumen: Chelsea vs Barcelona</h2>
 
-            <div class="video-container">
-                <video src="26.mp4" controls></video>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 DT Zone | Videos Oficiales</p>
-    </footer>
+<header id="header">
+    <div class="logo">
+        <img src="logo.png" alt="DT Logo" onclick="window.location.href='index.html'">
+        <h1>DT Zone</h1>
+        <h2>VIDEOS</h2>
+    </div>
+    <button id="btn-home" onclick="window.location.href='index.html'">← Principal</button>
+</header>
+
+<main>
+    <h2 class="titulo-video">Resumen: Chelsea vs Barcelona</h2>
+
+    <div class="video-container">
+        <video id="videoPlayer" src="26.mp4" controls></video>
+
+        <div class="controls">
+            <button onclick="document.getElementById('videoPlayer').pause()">Pausar</button>
+            <button onclick="document.getElementById('videoPlayer').play()">Reproducir</button>
+            <button onclick="document.getElementById('videoPlayer').currentTime -= 5">← 5s</button>
+            <button onclick="document.getElementById('videoPlayer').currentTime += 5">5s →</button>
+            <button onclick="document.getElementById('videoPlayer').muted = !document.getElementById('videoPlayer').muted">Silenciar</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 DT Zone | Videos</p>
+</footer>
+
+<script>
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 20)
+        document.getElementById("header").classList.add("scrolled");
+    else
+        document.getElementById("header").classList.remove("scrolled");
+});
+
+new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting)
+            entry.target.style.animation = "fadeIn 0.9s forwards ease-out";
+    });
+}, { threshold: 0.2 })
+.observe(document.querySelector(".titulo-video"));
+
+new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting)
+            entry.target.style.animation = "fadeIn 0.9s forwards ease-out";
+    });
+}, { threshold: 0.2 })
+.observe(document.querySelector(".video-container"));
+</script>
 </body>
 </html>
