@@ -5,184 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia del Chelsea FC - DT Zone</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f2f2f2;
-            color: #222;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #012169;
-            padding: 25px 0;
-            text-align: center;
-            color: white;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-        h2 {
-            color: #012169;
-            border-left: 6px solid #C9A23F;
-            padding-left: 10px;
-            margin-top: 40px;
-        }
-        p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-        img {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-        footer {
-            background: #012169;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6rem;
-            }
-            main {
-                padding: 15px;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #012169;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+header .logo img:hover {
+    transform: rotate(10deg);
+}
+
+header .logo h1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #C9A23F; /* DT Zone amarillo */
+    margin-right: 10px;
+}
+
+header .logo h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #ffffff; /* HISTORIA blanco */
+}
+
+#btn-home {
+    padding: 7px 15px;
+    background: #C9A23F;
+    color: #012169;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#btn-home:hover {
+    background: #f4d03f;
+}
+
+main {
+    max-width: 900px;
+    margin: 90px auto 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+}
+
+h2 {
+    color: #012169;
+    border-left: 6px solid #C9A23F;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    transition: color 0.3s;
+}
+
+h2:hover { color: #0144a5; }
+
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+img {
+    width: 100%;
+    max-width: 600px; /* imágenes más pequeñas */
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+img:hover { transform: scale(1.05); }
+
+footer {
+    background: #012169;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    header h1, header h2 { font-size: 1rem; }
+    main { padding: 15px; }
+    h2 { font-size: 1.3rem; }
+    #btn-home { padding: 5px 10px; font-size: 0.9rem; }
+}
 </style>
 </head>
 <body>
-    <header>
-        <h1>Historia del Chelsea FC</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Fundación y Primeros Pasos (1905-1949)</h2>
-            <p>
-                El Chelsea Football Club fue fundado el 10 de marzo de 1905 en el pub The Rising Sun,
-                frente al estadio Stamford Bridge. El objetivo era crear un equipo competitivo que jugara
-                en el estadio recién construido. Fue aceptado de inmediato en la Football League,
-                empezando en la Segunda División.
-            </p>
-            <p>
-                Desde el comienzo, el club llamó la atención por su estadio moderno y su ambición.
-                Aunque no logró grandes títulos en sus primeros años, logró ascender a Primera División
-                rápidamente y se convirtió en un equipo popular en Londres gracias a su estilo ofensivo.
-            </p>
 
-            <img src="historia1.jpg" alt="Chelsea antiguo">
-        </section>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="DT Logo" onclick="goHome()">
+        <h1>DT Zone</h1>
+        <h2>HISTORIA</h2>
+    </div>
+    <button id="btn-home" onclick="goHome()">← Principal</button>
+</header>
 
-        <section>
-            <h2>Primeros Éxitos y Crecimiento (1950–1970)</h2>
-            <p>
-                El club comenzó a fortalecerse en los años 50. En 1955, bajo el mando de Ted Drake,
-                el Chelsea ganó su primer título de liga, marcando un antes y un después.
-                Drake modernizó el club, mejoró el escudo, los entrenamientos y la filosofía de juego.
-            </p>
-            <p>
-                Durante los años 60, el Chelsea se asoció con el estilo moderno de Londres: música, moda
-                y juventud. Jugadores destacados como Peter Osgood y Charlie Cooke hicieron al equipo uno
-                de los más atractivos de la época. Finalmente, en 1971, el club ganó su primer título europeo:
-                la Recopa de Europa, derrotando al Real Madrid en un partido de desempate.
-            </p>
+<main>
+    <!-- Historia completa -->
+    <section>
+        <h2>Fundación y Primeros Pasos (1905-1949)</h2>
+        <p>El Chelsea Football Club fue fundado el 10 de marzo de 1905 en el pub The Rising Sun...</p>
+        <p>Desde el comienzo, el club llamó la atención por su estadio moderno y su ambición...</p>
+        <img src="historia1.jpg" alt="Chelsea antiguo">
+    </section>
 
-            <img src="historia2.jpg" alt="Chelsea 1971">
-        </section>
+    <section>
+        <h2>Primeros Éxitos y Crecimiento (1950–1970)</h2>
+        <p>El club comenzó a fortalecerse en los años 50...</p>
+        <p>Durante los años 60, el Chelsea se asoció con el estilo moderno de Londres...</p>
+        <img src="historia2.jpg" alt="Chelsea 1971">
+    </section>
 
-        <section>
-            <h2>Crisis y Reconstrucción (1980–2000)</h2>
-            <p>
-                Los años 80 fueron una etapa muy complicada. El club sufrió problemas económicos,
-                mala administración y el riesgo de perder Stamford Bridge ante empresas inmobiliarias.
-                La situación fue tan crítica que se temió por la existencia del club.
-            </p>
-            <p>
-                En los 90 comenzó un renacimiento. Con la llegada de figuras como Gianfranco Zola,
-                Dennis Wise, Gianluca Vialli y Roberto Di Matteo, el Chelsea volvió a competir por títulos.
-                El club ganó FA Cups, la Copa de la Liga, la Community Shield y la Recopa de Europa de 1998.
-                Para el año 2000, el Chelsea había retomado su prestigio.
-            </p>
+    <section>
+        <h2>Crisis y Reconstrucción (1980–2000)</h2>
+        <p>Los años 80 fueron una etapa muy complicada...</p>
+        <p>En los 90 comenzó un renacimiento...</p>
+        <img src="historia3.jpeg" alt="Chelsea en los 90">
+    </section>
 
-            <img src="historia3.jpeg" alt="Chelsea en los 90">
-        </section>
+    <section>
+        <h2>La Nueva Era con Abramóvich (2003–2010)</h2>
+        <p>En 2003, Roman Abramóvich compró el club...</p>
+        <p>Con José Mourinho como entrenador en 2004...</p>
+        <img src="historia4.jpeg" alt="Chelsea 2005">
+    </section>
 
-        <section>
-            <h2>La Nueva Era con Abramóvich (2003–2010)</h2>
-            <p>
-                En 2003, Roman Abramóvich compró el club, transformándolo por completo.
-                Su inversión permitió fichar jugadores de nivel mundial y construir un equipo altamente competitivo.
-            </p>
-            <p>
-                Con José Mourinho como entrenador en 2004, el Chelsea alcanzó una mentalidad ganadora.
-                El club conquistó la Premier League en 2005 y 2006, rompiendo récords y consolidándose
-                como una potencia. Jugadores como Drogba, Lampard, Terry o Čech definieron una generación histórica.
-            </p>
+    <section>
+        <h2>Primer Campeón de Europa (2012)</h2>
+        <p>En 2012, el Chelsea vivió uno de los momentos más importantes...</p>
+        <p>Didier Drogba fue el héroe, empatando el partido...</p>
+        <img src="Captura2.JPG" alt="Chelsea campeón 2012">
+    </section>
 
-            <img src="historia4.jpeg" alt="Chelsea 2005">
-        </section>
+    <section>
+        <h2>La Segunda Champions y la Nueva Generación (2021)</h2>
+        <p>En 2021, bajo la dirección de Thomas Tuchel...</p>
+        <img src="historia5.jpeg" alt="Chelsea 2021 campeón">
+    </section>
 
-        <section>
-            <h2>Primer Campeón de Europa (2012)</h2>
-            <p>
-                En 2012, el Chelsea vivió uno de los momentos más importantes de su historia al ganar
-                la Champions League en Múnich. A pesar de no ser favorito, el equipo mostró carácter,
-                resiliencia y un espíritu de lucha inolvidable.
-            </p>
-            <p>
-                Didier Drogba fue el héroe, empatando el partido con un cabezazo y marcando el penal decisivo.
-                Con este triunfo, el club alcanzó la cima del fútbol europeo.
-            </p>
+    <section>
+        <h2>Actualidad del Club</h2>
+        <p>Hoy, el Chelsea continúa siendo uno de los equipos más influyentes...</p>
+        <img src="chelsea2025.jpg" alt="Chelsea 2021 campeón">
+    </section>
+</main>
 
-            <img src="Captura2.JPG" alt="Chelsea campeón 2012">
-        </section>
+<footer>
+    <p>&copy; 2025 DT Zone | Historia del Chelsea FC</p>
+</footer>
 
-        <section>
-            <h2>La Segunda Champions y la Nueva Generación (2021)</h2>
-            <p>
-                En 2021, bajo la dirección de Thomas Tuchel, una plantilla joven y talentosa logró la
-                segunda Champions League del club. El gol de Kai Havertz ante el Manchester City coronó
-                a una nueva generación y confirmó el potencial de la academia del Chelsea.
-            </p>
+<script>
+function goHome() {
+    window.location.href = "index.html"; // Ajusta al path real de la página principal
+}
 
-            <img src="historia5.jpeg" alt="Chelsea 2021 campeón">
-        </section>
+// Animar párrafos al hacer scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.animation = "fadeIn 1s forwards";
+        }
+    });
+}, { threshold: 0.1 });
 
-        <section>
-            <h2>Actualidad del Club</h2>
-            <p>
-                Hoy, el Chelsea continúa siendo uno de los equipos más influyentes de Europa.
-                A pesar de cambios en la dirección y en el proyecto deportivo, mantiene su ambición
-                de competir por títulos. Stamford Bridge sigue siendo un estadio emblemático y
-                el club continúa desarrollando jóvenes talentos que representan el futuro de la institución.
-            </p>
-        </section>
+document.querySelectorAll('p').forEach(p => observer.observe(p));
 
-    </main>
-    <footer>
-        <p>&copy; 2025 DT Zone | Historia del Chelsea FC</p>
-    </footer>
+// Ampliar imágenes al hacer click
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', () => {
+        const src = img.getAttribute('src');
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = 0;
+        modal.style.left = 0;
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.background = 'rgba(0,0,0,0.8)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.cursor = 'pointer';
+        modal.innerHTML = `<img src="${src}" style="max-width:90%; max-height:90%; border-radius:10px;">`;
+        document.body.appendChild(modal);
+        modal.addEventListener('click', () => modal.remove());
+    });
+});
+</script>
 </body>
 </html>
