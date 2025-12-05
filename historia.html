@@ -4,139 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia del Chelsea FC - DT Zone</title>
-    <style>
-* { margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+<style>
+    * { margin: 0;
+        padding: 0; 
+        box-sizing: border-box; 
+    }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
-    color: #222;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
 
-header {
-    background-color: #012169;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
+    header {
+        background-color: #012169;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-header .logo img {
-    width: 60px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
+    header .logo img {
+        width: 40px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
 
-header .logo img:hover {
-    transform: rotate(10deg);
-}
+    header .logo img:hover { transform: rotate(10deg); }
 
-header .logo h1 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #C9A23F;
-    margin-right: 10px;
-}
+    header .logo h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #C9A23F;
+    }
 
-header .logo h2 {
-    font-size: 1.4rem;
-    font-weight: normal;
-    color: #ffffff;
-}
+    header .logo h2 {
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #ffffff;
+    }
 
-#btn-home {
-    padding: 7px 15px;
-    background: #C9A23F;
-    color: #012169;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
+    #btn-home {
+        padding: 7px 15px;
+        background: #C9A23F;
+        color: #012169;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
 
-#btn-home:hover {
-    background: #f4d03f;
-}
+    #btn-home:hover { background: #f4d03f; }
 
-main {
-    max-width: 900px;
-    margin: 90px auto 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-}
+    main {
+        max-width: 1000px;
+        margin: 90px auto 20px;
+        padding: 20px;
+    }
 
-h2 {
-    color: #012169;
-    border-left: 6px solid #C9A23F;
-    padding-left: 10px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-    transition: color 0.3s;
-}
+    .seccion {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-top: 40px;
+        color: #012169;
+        border-left: 6px solid #C9A23F;
+        padding-left: 10px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s forwards;
+    }
 
-h2:hover { color: #0144a5; }
+    p {
+        margin-top: 15px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s forwards;
+    }
 
-p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
+    img.historia-img {
+        width: 100%;
+        max-width: 650px;
+        display: block;
+        margin: 25px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
 
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-}
+    img.historia-img:hover { transform: scale(1.05); }
 
-img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
-    cursor: pointer;
-}
+    footer {
+        background: #012169;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
 
-img:hover { transform: scale(1.05); }
+    @keyframes fadeIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-footer {
-    background: #012169;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-@media (max-width: 600px) {
-    header h1, header h2 { font-size: 1rem; }
-    main { padding: 15px; }
-    h2 { font-size: 1.3rem; }
-    #btn-home { padding: 5px 10px; font-size: 0.9rem; }
-}
-</style>
+    @media (max-width: 650px) {
+        header .logo h1, header .logo h2 { font-size: 1rem; }
+        #btn-home { padding: 5px 10px; font-size: 0.9rem; }
+        .seccion { font-size: 1.3rem; }
+    }
+    </style>
 </head>
 <body>
-
 <header>
     <div class="logo">
         <img src="logo.png" alt="DT Logo" onclick="goHome()">
@@ -147,60 +137,65 @@ footer {
 </header>
 
 <main>
+
     <section>
-        <h2>Fundación y Primeros Pasos (1905-1949)</h2>
+        <h2 class="seccion">Fundación y Primeros Pasos (1905-1949)</h2>
         <p>El Chelsea Football Club fue fundado el 10 de marzo de 1905 en el pub The Rising Sun...</p>
         <p>Desde el comienzo, el club llamó la atención por su estadio moderno y su ambición...</p>
-        <img src="historia1.jpg" alt="Chelsea antiguo">
+        <img src="historia1.jpg" class="historia-img" alt="Chelsea antiguo">
     </section>
 
     <section>
-        <h2>Primeros Éxitos y Crecimiento (1950–1970)</h2>
+        <h2 class="seccion">Primeros Éxitos y Crecimiento (1950–1970)</h2>
         <p>El club comenzó a fortalecerse en los años 50...</p>
         <p>Durante los años 60, el Chelsea se asoció con el estilo moderno de Londres...</p>
-        <img src="historia2.jpg" alt="Chelsea 1971">
+        <img src="historia2.jpg" class="historia-img" alt="Chelsea 1971">
     </section>
 
     <section>
-        <h2>Crisis y Reconstrucción (1980–2000)</h2>
+        <h2 class="seccion">Crisis y Reconstrucción (1980–2000)</h2>
         <p>Los años 80 fueron una etapa muy complicada...</p>
         <p>En los 90 comenzó un renacimiento...</p>
-        <img src="historia3.jpeg" alt="Chelsea en los 90">
+        <img src="historia3.jpeg" class="historia-img" alt="Chelsea en los 90">
     </section>
 
     <section>
-        <h2>La Nueva Era con Abramóvich (2003–2010)</h2>
+        <h2 class="seccion">La Nueva Era con Abramóvich (2003–2010)</h2>
         <p>En 2003, Roman Abramóvich compró el club...</p>
         <p>Con José Mourinho como entrenador en 2004...</p>
-        <img src="historia4.jpeg" alt="Chelsea 2005">
+        <img src="historia4.jpeg" class="historia-img" alt="Chelsea 2005">
     </section>
 
     <section>
-        <h2>Primer Campeón de Europa (2012)</h2>
+        <h2 class="seccion">Primer Campeón de Europa (2012)</h2>
         <p>En 2012, el Chelsea vivió uno de los momentos más importantes...</p>
         <p>Didier Drogba fue el héroe, empatando el partido...</p>
-        <img src="Captura2.JPG" alt="Chelsea campeón 2012">
+        <img src="Captura2.JPG" class="historia-img" alt="Chelsea campeón 2012">
     </section>
 
     <section>
-        <h2>La Segunda Champions y la Nueva Generación (2021)</h2>
+        <h2 class="seccion">La Segunda Champions y la Nueva Generación (2021)</h2>
         <p>En 2021, bajo la dirección de Thomas Tuchel...</p>
-        <img src="historia5.jpeg" alt="Chelsea 2021 campeón">
+        <img src="historia5.jpeg" class="historia-img" alt="Chelsea 2021 campeón">
     </section>
 
     <section>
-        <h2>Actualidad del Club</h2>
+        <h2 class="seccion">Actualidad del Club</h2>
         <p>Hoy, el Chelsea continúa siendo uno de los equipos más influyentes...</p>
-        <img src="chelsea2025.jpg" alt="Chelsea 2021 campeón">
+        <img src="chelsea2025.jpg" class="historia-img" alt="Chelsea 2025">
     </section>
+
 </main>
+
 <footer>
     <p>&copy; 2025 DT Zone | Historia del Chelsea FC</p>
 </footer>
+
 <script>
 function goHome() {
     window.location.href = "index.html";
 }
+
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -209,9 +204,10 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('p').forEach(p => observer.observe(p));
+document.querySelectorAll('.seccion, p, .historia-img')
+        .forEach(el => observer.observe(el));
 
-document.querySelectorAll('img').forEach(img => {
+document.querySelectorAll('.historia-img').forEach(img => {
     img.addEventListener('click', () => {
         const src = img.getAttribute('src');
         const modal = document.createElement('div');
