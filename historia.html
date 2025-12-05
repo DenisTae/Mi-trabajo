@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia del Chelsea FC - DT Zone</title>
     <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +37,7 @@ header .logo {
 }
 
 header .logo img {
-    width: 40px;
+    width: 60px;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -46,14 +49,14 @@ header .logo img:hover {
 header .logo h1 {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #C9A23F; /* DT Zone amarillo */
+    color: #C9A23F;
     margin-right: 10px;
 }
 
 header .logo h2 {
     font-size: 1.4rem;
     font-weight: normal;
-    color: #ffffff; /* HISTORIA blanco */
+    color: #ffffff;
 }
 
 #btn-home {
@@ -105,7 +108,7 @@ p {
 
 img {
     width: 100%;
-    max-width: 600px; /* imágenes más pequeñas */
+    max-width: 600px;
     display: block;
     margin: 20px auto;
     border-radius: 10px;
@@ -144,7 +147,6 @@ footer {
 </header>
 
 <main>
-    <!-- Historia completa -->
     <section>
         <h2>Fundación y Primeros Pasos (1905-1949)</h2>
         <p>El Chelsea Football Club fue fundado el 10 de marzo de 1905 en el pub The Rising Sun...</p>
@@ -192,17 +194,13 @@ footer {
         <img src="chelsea2025.jpg" alt="Chelsea 2021 campeón">
     </section>
 </main>
-
 <footer>
     <p>&copy; 2025 DT Zone | Historia del Chelsea FC</p>
 </footer>
-
 <script>
 function goHome() {
-    window.location.href = "index.html"; // Ajusta al path real de la página principal
+    window.location.href = "index.html";
 }
-
-// Animar párrafos al hacer scroll
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -213,7 +211,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('p').forEach(p => observer.observe(p));
 
-// Ampliar imágenes al hacer click
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', () => {
         const src = img.getAttribute('src');
