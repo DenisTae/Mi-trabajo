@@ -5,186 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DT Zone</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>DT Zone</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0;
+            padding: 0; 
+            box-sizing: border-box; }
+
         body {
-            margin: 0;
             background: #061f4a;
-            color: #ffffff;
+            color: white;
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
         }
         header {
-            background: #061f4a;
-            padding: 18px 50px;
-            border-bottom: 3px solid #0f3c94;
+            background: #012169;
+            padding: 18px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
-        nav .brand {
+        .brand {
             display: flex;
             align-items: center;
             gap: 15px;
         }
         nav img {
-            width: 65px;
+            width: 60px;
         }
         nav h1 {
-            font-size: 42px;
-            font-weight: 800;
-            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
             color: #f4d03f;
-            margin: 0;
+            font-family: 'Montserrat', sans-serif;
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 40px;
-            padding: 0;
-            margin: 0;
+            gap: 35px;
+            transition: all 0.3s ease-in-out;
         }
         nav a {
             text-decoration: none;
-            color: #ffffff;
+            color: white;
             font-size: 18px;
             font-weight: 500;
         }
-        nav a:hover {
-            color: #f4d03f;
+        nav a:hover { color: #f4d03f; }
+
+        .menu-btn {
+            display: none;
+            font-size: 40px;
+            cursor: pointer;
+            user-select: none;
         }
-        #videos {
+
+        section {
             padding: 40px 60px;
         }
+
+        #videos {
+            background: rgba(9, 21, 37, 0.18);
+        }
+
+        #partidos {
+            background: rgba(48, 62, 109, 0.35);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        }
+
+        #historia {
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            gap: 40px;
+            margin: 40px 60px;
+            border-radius: 15px;
+        }
+
         #videos h2 {
             font-size: 32px;
             margin-bottom: 25px;
         }
-        #videos .grid {
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
-        #videos article {
+
+        article {
             background: #0b2f6e;
             padding: 15px;
             border-radius: 12px;
-            transition: .2s;
+            box-shadow: 0 0 10px black;
+            transition: 0.25s;
         }
-        #videos article:hover {
+
+        article:hover {
             transform: scale(1.05);
         }
-        #videos img {
+
+        article img {
             width: 100%;
             height: 180px;
+            border-radius: 12px;
             object-fit: cover;
-            border-radius: 12px;
         }
-        #videos p {
-            margin-top: 10px;
-            font-size: 17px;
-            line-height: 1.4;
-        }
-        #partidos {
-            background: #0f3c94;
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
-        #partidos h2 {
-            font-size: 30px;
-        }
-        #partidos h3 {
-            margin-top: 25px;
-            font-size: 22px;
-        }
+
         table {
             width: 100%;
-            background: #0b2f6e;
+            background: #091630;
+            margin-top: 15px;
             border-collapse: collapse;
-            margin-top: 10px;
         }
-        table th {
-            background: #143f93;
-        }
-        table th,table td {
+
+        table th, table td {
             padding: 12px;
         }
-        table tr:hover td {
+
+        table th { background: #001131; }
+
+        tr:hover td {
             background: #1a4fb1;
         }
+
         #historia-title {
+            margin-left: 60px;
+            margin-top: 40px;
+            margin-bottom: 10px;
             font-size: 32px;
-            margin: 40px 60px 10px;
         }
-        #historia {
-            display: flex;
-            padding: 40px 60px;
-            gap: 40px;
-        }
+
         #historia article {
             width: 60%;
             font-size: 18px;
-            line-height: 1.8;
         }
+
         #historia figure img {
             width: 100%;
-            max-width: 430px;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px black;
         }
+
         footer {
             margin-top: 50px;
             background: #0b2f6e;
             text-align: center;
             padding: 20px;
-            font-size: 14px;
         }
-        @media (max-width: 1000px) {
-            #videos .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 700px) {
-            nav h1 {
-                font-size: 30px;
-            }
-            nav img {
-                width: 50px;
-            }
+
+        @media (max-width: 900px) {
+
+            .menu-btn { display: block; color: white; }
+
             nav ul {
                 display: none;
-            }
-            #videos {
-                padding: 25px;
-            }
-            #videos h2 {
-                text-align: center;
-            }
-            #videos .grid {
-                grid-template-columns: 1fr;
-            }
-            #partidos {
-                padding: 20px;
-            }
-            #historia {
                 flex-direction: column;
-                text-align: center;
-                padding: 25px;
+                position: absolute;
+                right: 0;
+                top: 85px;
+                background: #0a2d63;
+                width: 190px;
+                padding: 20px 15px;
+                border-radius: 12px;
+                box-shadow: 0 0 20px black;
+                animation: fade .25s ease;
             }
-            #historia article {
-                width: 100%;
+
+            @keyframes fade {
+                from { opacity: 0; transform: translateY(-10px); }
+                to   { opacity: 1; transform: translateY(0); }
             }
-            #historia figure img {
-                margin: auto;
-            }
+
+            .grid { grid-template-columns: repeat(2, 1fr); }
+
+            #historia { flex-direction: column; }
+
+            #historia article { width: 100%; }
+
+            section { padding: 30px 25px; }
         }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            nav h1 { font-size: 28px; }
+        }
+
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -192,7 +207,8 @@
                 <img src="logo.png" alt="Logo DT">
                 <h1>DT Zone</h1>
             </div>
-            <ul>
+            <div class="menu-btn" id="btn" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
                 <li><a href="videos.html">VIDEOS</a></li>
                 <li><a href="historia.html">HISTORIA</a></li>
                 <li><a href="partidos.html">PARTIDOS</a></li>
@@ -203,97 +219,124 @@
     <main>
         <section id="videos">
             <h2>Noticias y videos del equipo</h2>
+
             <div class="grid">
 
-                <article>
-                    <img src="Captura1.JPG" alt="">
-                    <p>UCL partido completo: Chelsea 3–0 Barcelona</p>
-                </article>
+    <a href="videos.html" style="text-decoration:none; color:white;">
+        <article>
+            <img src="Captura1.JPG">
+            <p>UCL </p>
+            <p>partido completo:</p>
+            <p>Chelsea 3 – 0 Barcelona</p>
+        </article>
+    </a>
 
-                <article>
-                    <img src="Captura3.JPG" alt="">
-                    <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
-                </article>
+    <a href="info.html" style="text-decoration:none; color:white;">
+        <article>
+            <img src="Captura3.JPG">
+            <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
+        </article>
+    </a>
 
-                <article>
-                    <img src="Captura4.JPG" alt="">
-                    <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
-                </article>
+    <a href="info.html" style="text-decoration:none; color:white;">
+        <article>
+            <img src="Captura4.JPG">
+            <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
+        </article>
+    </a>
 
-                <article>
-                    <img src="Captura5.JPG" alt="">
-                    <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
-                </article>
-            </div>
+    <a href="info.html" style="text-decoration:none; color:white;">
+        <article>
+            <img src="Captura5.JPG">
+            <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
+        </article>
+    </a>
+
+</div>
             <section id="partidos">
                 <h2>Próximos partidos</h2>
+
                 <h3>Noviembre, 2025</h3>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>FECHA</th>
-                            <th>PARTIDO</th>
-                            <th>HORA</th>
-                            <th>COMPETENCIA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dom., 30 Nov.</td>
-                            <td>Chelsea vs Arsenal</td>
-                            <td>12:30 PM</td>
-                            <td>Premier League</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th>FECHA</th><th>PARTIDO</th><th>HORA</th><th>COMPETENCIA</th>
+                    </tr>
+                    <tr>
+                        <td>Dom., 30 Nov.</td>
+                        <td>Chelsea vs Arsenal</td>
+                        <td>12:30 PM</td>
+                        <td>Premier League</td>
+                    </tr>
                 </table>
+
                 <h3>Diciembre, 2025</h3>
                 <table>
-                    <tbody>
-                        <tr>
-                            <td>Mié., 3 Dic.</td>
-                            <td>Leeds United vs Chelsea</td>
-                            <td>4:15 PM</td>
-                            <td>Premier League</td>
-                        </tr>
-
-                        <tr>
-                            <td>Sáb., 6 Dic.</td>
-                            <td>AFC Bournemouth vs Chelsea</td>
-                            <td>11:00 AM</td>
-                            <td>Premier League</td>
-                        </tr>
-
-                        <tr>
-                            <td>Mar., 9 Dic.</td>
-                            <td>Atalanta vs Chelsea</td>
-                            <td>4:00 PM</td>
-                            <td>UEFA Champions League</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <td>Mié., 3 Dic.</td>
+                        <td>Leeds United vs Chelsea</td>
+                        <td>4:15 PM</td>
+                        <td>Premier League</td>
+                    </tr>
+                    <tr>
+                        <td>Sáb., 6 Dic.</td>
+                        <td>AFC Bournemouth vs Chelsea</td>
+                        <td>11:00 AM</td>
+                        <td>Premier League</td>
+                    </tr>
+                    <tr>
+                        <td>Mar., 9 Dic.</td>
+                        <td>Atalanta vs Chelsea</td>
+                        <td>4:00 PM</td>
+                        <td>UEFA Champions League</td>
+                    </tr>
                 </table>
             </section>
         </section>
         <h2 id="historia-title">La Primera Corona Europea del Chelsea</h2>
+
         <section id="historia">
             <article>
                 <p>
-                    En 2012, el Chelsea sorprendió al mundo al conquistar su primera Champions League.
-                    Tras una temporada difícil, el equipo llegó a la final en Múnich como el “no favorito”.
-                    El Bayern dominó, pero el Chelsea resistió con una defensa heroica y un Petr Čech brillante.
-                    <br><br>
-                    A pocos minutos del final, cuando los alemanes ganaban 1-0, Didier Drogba empató con un cabezazo inolvidable.
-                    En la prórroga, Čech atajó un penal clave y todo se definió en los penales. Drogba anotó el tiro final y selló la hazaña.
-                    <br><br>
-                    Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo.
+                En 2012, el Chelsea sorprendió al mundo al conquistar su primera Champions League.
+                Tras una temporada difícil, el equipo llegó a la final en Múnich como el “no favorito”.
+                El Bayern dominó, pero el Chelsea resistió con una defensa heroica y un Petr Čech brillante.
+                <br><br>
+                A pocos minutos del final, cuando los alemanes ganaban 1-0, Didier Drogba empató con un cabezazo inolvidable.
+                En la prórroga, Čech atajó un penal clave y todo se definió en los penales. Drogba anotó el tiro final.
+                <br><br>
+                Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo.
                 </p>
             </article>
+
             <figure>
                 <img src="Captura2.JPG" alt="Chelsea campeón 2012">
             </figure>
         </section>
+
     </main>
     <footer>
         &copy; 2025 DT Zone | Todos los derechos reservados.
     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const btn = document.getElementById("btn");
+
+            const abierto = menu.style.display === "flex";
+
+            menu.style.display = abierto ? "none" : "flex";
+            menu.style.flexDirection = "column";
+
+            btn.textContent = abierto ? "☰" : "✖";
+        }
+        document.querySelectorAll("#menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth < 900) {
+                    document.getElementById("menu").style.display = "none";
+                    document.getElementById("btn").textContent = "☰";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
