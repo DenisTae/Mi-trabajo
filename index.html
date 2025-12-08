@@ -197,7 +197,6 @@
             nav h1 { font-size: 28px; }
         }
 
-        /* Animaciones suaves */
         .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
         @keyframes fadeIn { to { opacity: 1; } }
     </style>
@@ -280,13 +279,10 @@
             </figure>
         </section>
     </main>
-
     <footer>
         &copy; 2025 DT Zone | Todos los derechos reservados.
     </footer>
-
     <script>
-        // Menú responsive
         function toggleMenu() {
             const menu = document.getElementById("menu");
             const btn = document.getElementById("btn");
@@ -304,8 +300,6 @@
                 }
             });
         });
-
-        // Datos de partidos dinámicos
         const partidos = [
             { fecha: "Sáb., 13 Dic.", partido: "Chelsea vs Everton", hora: "11:00 AM", competencia: "Premier League" },
             { fecha: "Mar., 16 Dic.", partido: "Cardiff City vs Chelsea", hora: "4:00 PM", competencia: "Carabao Cup" },
@@ -329,7 +323,6 @@
                 tabla.appendChild(row);
             });
         }
-
         cargarPartidos();
     </script>
 </body>
