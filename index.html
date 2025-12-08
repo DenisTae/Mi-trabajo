@@ -5,57 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DT Zone</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <title>DT Zone</title>
     <style>
-        * { margin: 0;
+        * { margin: 0; 
             padding: 0; 
-            box-sizing: border-box; }
+            box-sizing: border-box; 
+        }
 
         body {
             background: #061f4a;
             color: white;
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
+
         header {
             background: #012169;
             padding: 18px 30px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
         }
+
         .brand {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        nav img {
-            width: 60px;
-        }
+
+        nav img { width: 60px; }
+
         nav h1 {
             font-size: 36px;
             color: #f4d03f;
             font-family: 'Montserrat', sans-serif;
+            text-shadow: 1px 1px 4px black;
         }
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 35px;
             transition: all 0.3s ease-in-out;
         }
+
         nav a {
             text-decoration: none;
             color: white;
             font-size: 18px;
             font-weight: 500;
+            transition: 0.3s;
         }
-        nav a:hover { color: #f4d03f; }
+
+        nav a:hover { color: #f4d03f; 
+                    transform: scale(1.1); 
+                    }
 
         .menu-btn {
             display: none;
@@ -64,13 +76,9 @@
             user-select: none;
         }
 
-        section {
-            padding: 40px 60px;
-        }
+        section { padding: 40px 60px; }
 
-        #videos {
-            background: rgba(9, 21, 37, 0.18);
-        }
+        #videos { background: rgba(9, 21, 37, 0.18); }
 
         #partidos {
             background: rgba(48, 62, 109, 0.35);
@@ -78,7 +86,10 @@
             margin-top: 30px;
             border-radius: 15px;
             box-shadow: 0 0 12px rgba(0,0,0,0.5);
+            transition: 0.3s;
         }
+
+        #partidos:hover { transform: scale(1.02); }
 
         #historia {
             background: rgba(0, 0, 0, 0.45);
@@ -86,12 +97,11 @@
             gap: 40px;
             margin: 40px 60px;
             border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 0 15px black;
         }
 
-        #videos h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
+        #videos h2, #partidos h2 { font-size: 32px; margin-bottom: 25px; text-shadow: 1px 1px 4px black; }
 
         .grid {
             display: grid;
@@ -104,11 +114,12 @@
             padding: 15px;
             border-radius: 12px;
             box-shadow: 0 0 10px black;
-            transition: 0.25s;
+            transition: 0.25s transform, 0.25s box-shadow;
         }
 
         article:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px #f4d03f;
         }
 
         article img {
@@ -123,30 +134,23 @@
             background: #091630;
             margin-top: 15px;
             border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
-        table th, table td {
-            padding: 12px;
-        }
-
+        table th, table td { padding: 12px; text-align: center; }
         table th { background: #001131; }
-
-        tr:hover td {
-            background: #1a4fb1;
-        }
+        tr:hover td { background: #1a4fb1; transition: 0.3s; }
 
         #historia-title {
             margin-left: 60px;
             margin-top: 40px;
             margin-bottom: 10px;
             font-size: 32px;
+            text-shadow: 1px 1px 4px black;
         }
 
-        #historia article {
-            width: 60%;
-            font-size: 18px;
-        }
-
+        #historia article { width: 60%; font-size: 18px; }
         #historia figure img {
             width: 100%;
             border-radius: 12px;
@@ -158,12 +162,11 @@
             background: #0b2f6e;
             text-align: center;
             padding: 20px;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 900px) {
-
             .menu-btn { display: block; color: white; }
-
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -184,11 +187,8 @@
             }
 
             .grid { grid-template-columns: repeat(2, 1fr); }
-
             #historia { flex-direction: column; }
-
             #historia article { width: 100%; }
-
             section { padding: 30px 25px; }
         }
 
@@ -197,9 +197,11 @@
             nav h1 { font-size: 28px; }
         }
 
+        /* Animaciones suaves */
+        .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; } }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
@@ -216,85 +218,51 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="videos">
-            <h2>Noticias y videos del equipo</h2>
+            <h2 class="fade-in">Noticias y videos del equipo</h2>
+            <div class="grid fade-in">
+                <a href="videos.html" style="text-decoration:none; color:white;">
+                    <article>
+                        <img src="Captura1.JPG">
+                        <p>UCL </p>
+                        <p>partido completo:</p>
+                        <p>Chelsea 3 – 0 Barcelona</p>
+                    </article>
+                </a>
+                <a href="info.html" style="text-decoration:none; color:white;">
+                    <article>
+                        <img src="Captura3.JPG">
+                        <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
+                    </article>
+                </a>
+                <a href="info.html" style="text-decoration:none; color:white;">
+                    <article>
+                        <img src="Captura4.JPG">
+                        <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
+                    </article>
+                </a>
+                <a href="info.html" style="text-decoration:none; color:white;">
+                    <article>
+                        <img src="Captura5.JPG">
+                        <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
+                    </article>
+                </a>
+            </div>
 
-            <div class="grid">
-
-    <a href="videos.html" style="text-decoration:none; color:white;">
-        <article>
-            <img src="Captura1.JPG">
-            <p>UCL </p>
-            <p>partido completo:</p>
-            <p>Chelsea 3 – 0 Barcelona</p>
-        </article>
-    </a>
-
-    <a href="info.html" style="text-decoration:none; color:white;">
-        <article>
-            <img src="Captura3.JPG">
-            <p>Estevao Willian: “Es muy importante que lo que hagas lo hagas con amor”</p>
-        </article>
-    </a>
-
-    <a href="info.html" style="text-decoration:none; color:white;">
-        <article>
-            <img src="Captura4.JPG">
-            <p>Enzo Maresca: Te necesitaremos contra el Arsenal</p>
-        </article>
-    </a>
-
-    <a href="info.html" style="text-decoration:none; color:white;">
-        <article>
-            <img src="Captura5.JPG">
-            <p>Los encuentros más memorables del Chelsea contra el Arsenal</p>
-        </article>
-    </a>
-
-</div>
             <section id="partidos">
-                <h2>Próximos partidos</h2>
-
-                <h3>Noviembre, 2025</h3>
-                <table>
+                <h2 class="fade-in">Próximos partidos</h2>
+                <table id="tabla-partidos">
                     <tr>
                         <th>FECHA</th><th>PARTIDO</th><th>HORA</th><th>COMPETENCIA</th>
-                    </tr>
-                    <tr>
-                        <td>Dom., 30 Nov.</td>
-                        <td>Chelsea vs Arsenal</td>
-                        <td>12:30 PM</td>
-                        <td>Premier League</td>
-                    </tr>
-                </table>
-
-                <h3>Diciembre, 2025</h3>
-                <table>
-                    <tr>
-                        <td>Mié., 3 Dic.</td>
-                        <td>Leeds United vs Chelsea</td>
-                        <td>4:15 PM</td>
-                        <td>Premier League</td>
-                    </tr>
-                    <tr>
-                        <td>Sáb., 6 Dic.</td>
-                        <td>AFC Bournemouth vs Chelsea</td>
-                        <td>11:00 AM</td>
-                        <td>Premier League</td>
-                    </tr>
-                    <tr>
-                        <td>Mar., 9 Dic.</td>
-                        <td>Atalanta vs Chelsea</td>
-                        <td>4:00 PM</td>
-                        <td>UEFA Champions League</td>
                     </tr>
                 </table>
             </section>
         </section>
-        <h2 id="historia-title">La Primera Corona Europea del Chelsea</h2>
 
-        <section id="historia">
+        <h2 id="historia-title" class="fade-in">La Primera Corona Europea del Chelsea</h2>
+        <section id="historia" class="fade-in">
             <article>
                 <p>
                 En 2012, el Chelsea sorprendió al mundo al conquistar su primera Champions League.
@@ -307,28 +275,27 @@
                 Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo.
                 </p>
             </article>
-
             <figure>
                 <img src="Captura2.JPG" alt="Chelsea campeón 2012">
             </figure>
         </section>
-
     </main>
+
     <footer>
         &copy; 2025 DT Zone | Todos los derechos reservados.
     </footer>
+
     <script>
+        // Menú responsive
         function toggleMenu() {
             const menu = document.getElementById("menu");
             const btn = document.getElementById("btn");
-
             const abierto = menu.style.display === "flex";
-
             menu.style.display = abierto ? "none" : "flex";
             menu.style.flexDirection = "column";
-
             btn.textContent = abierto ? "☰" : "✖";
         }
+
         document.querySelectorAll("#menu a").forEach(link => {
             link.addEventListener("click", () => {
                 if (window.innerWidth < 900) {
@@ -337,6 +304,33 @@
                 }
             });
         });
+
+        // Datos de partidos dinámicos
+        const partidos = [
+            { fecha: "Sáb., 13 Dic.", partido: "Chelsea vs Everton", hora: "11:00 AM", competencia: "Premier League" },
+            { fecha: "Mar., 16 Dic.", partido: "Cardiff City vs Chelsea", hora: "4:00 PM", competencia: "Carabao Cup" },
+            { fecha: "Sáb., 6 Dic.", partido: "AFC Bournemouth vs Chelsea", hora: "11:00 AM", competencia: "Premier League" },
+            { fecha: "Mar., 9 Dic.", partido: "Atalanta vs Chelsea", hora: "4:00 PM", competencia: "UEFA Champions League" },
+            { fecha: "Dom., 14 Dic.", partido: "Chelsea vs Tottenham", hora: "2:00 PM", competencia: "Premier League" },
+            { fecha: "Mié., 17 Dic.", partido: "Chelsea vs Milan", hora: "5:00 PM", competencia: "UEFA Champions League" },
+            { fecha: "Sáb., 20 Dic.", partido: "Chelsea vs Manchester United", hora: "1:30 PM", competencia: "Premier League" },
+            { fecha: "Mar., 23 Dic.", partido: "Chelsea vs Liverpool", hora: "3:00 PM", competencia: "Premier League" }
+        ];
+
+        const tabla = document.getElementById("tabla-partidos");
+
+        function cargarPartidos() {
+            tabla.innerHTML = `<tr>
+                <th>FECHA</th><th>PARTIDO</th><th>HORA</th><th>COMPETENCIA</th>
+            </tr>`;
+            partidos.forEach(p => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${p.fecha}</td><td>${p.partido}</td><td>${p.hora}</td><td>${p.competencia}</td>`;
+                tabla.appendChild(row);
+            });
+        }
+
+        cargarPartidos();
     </script>
 </body>
 </html>
