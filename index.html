@@ -200,12 +200,11 @@
         .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* ---------- RESPONSIVIDAD DE LA TABLA ---------- */
         .tabla-responsive {
             width: 100%;
             overflow-x: auto;
             border-radius: 12px;
-            padding-bottom: 10px; /* evita corte en móvil */
+            padding-bottom: 10px;
         }
 
         .tabla-responsive table {
@@ -269,8 +268,6 @@
 
             <section id="partidos">
                 <h2 class="fade-in">Próximos partidos</h2>
-
-                <!-- CONTENEDOR RESPONSIVO -->
                 <div class="tabla-responsive">
                     <table id="tabla-partidos">
                         <tr>
@@ -278,7 +275,6 @@
                         </tr>
                     </table>
                 </div>
-                <!-- FIN CONTENEDOR -->
             </section>
         </section>
 
