@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia del Chelsea FC - DT Zone</title>
-<style>
+    <style>
     * { margin: 0; 
         padding: 0; 
         box-sizing: border-box; 
@@ -97,7 +97,28 @@
         #btn-home { padding: 5px 10px; font-size: 0.9rem; }
         .seccion { font-size: 1.3rem; }
     }
-</style>
+
+    #btnArriba {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #C9A23F;
+        color: #012169;
+        padding: 12px 15px;
+        border-radius: 50%;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+        z-index: 2000;
+    }
+    #btnArriba:hover {
+        background: #f4d03f;
+        transform: scale(1.1);
+    }
+    </style>
 </head>
 <body>
 <header>
@@ -171,6 +192,8 @@
     <p>&copy; 2025 DT Zone | Historia del Chelsea FC</p>
 </footer>
 
+<button id="btnArriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
 <script>
 function goHome() {
     window.location.href = "index.html";
@@ -209,6 +232,14 @@ for(var i=0; i<imagenes.length; i++){
         modal.addEventListener('click', function(){ this.remove(); });
     });
 }
+window.addEventListener('scroll', function(){
+    var btn = document.getElementById('btnArriba');
+    if(window.scrollY > 400){
+        btn.style.display = 'block';
+    } else {
+        btn.style.display = 'none';
+    }
+});
 </script>
 </body>
 </html>

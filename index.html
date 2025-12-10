@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DT Zone</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
+        <style>
         * { margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
@@ -65,9 +65,10 @@
             transition: 0.3s;
         }
 
-        nav a:hover { color: #f4d03f; 
-                    transform: scale(1.1); 
-                    }
+        nav a:hover { 
+            color: #f4d03f;
+            transform: scale(1.1); 
+        }
 
         .menu-btn {
             display: none;
@@ -200,17 +201,30 @@
         .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        .tabla-responsive {
-            width: 100%;
-            overflow-x: auto;
-            border-radius: 12px;
-            padding-bottom: 10px;
-        }
+        .tabla-responsive { width: 100%; overflow-x: auto; border-radius: 12px; padding-bottom: 10px; }
+        .tabla-responsive table { min-width: 600px; }
 
-        .tabla-responsive table {
-            min-width: 600px;
+        #btnArriba {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f4d03f;
+            color: #012169;
+            padding: 12px 15px;
+            border-radius: 50%;
+            font-size: 22px;
+            border: none;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            z-index: 2000;
         }
-    </style>
+        #btnArriba:hover {
+            background: #e6c23c;
+            transform: scale(1.1);
+        }
+        </style>
 </head>
 
 <body>
@@ -287,16 +301,13 @@
                 como el “no favorito”, enfrentando al Bayern Múnich en su propio estadio, el Allianz Arena, donde la presión
                 y las probabilidades estaban totalmente en su contra.
                 <br><br>
-
                 Durante gran parte del partido, el Bayern dominó con posesión, ataques constantes y numerosas ocasiones de gol,
                 pero el Chelsea resistió con una defensa heroica, un espíritu de lucha inquebrantable y un Petr Čech decisivo,
                 que mantuvo al equipo con vida en los momentos más críticos.
                 <br><br>
-
                 Cuando todo parecía perdido, Didier Drogba apareció con un cabezazo inolvidable que empató el partido y llevó la
                 final al alargue. Finalmente, en la tanda de penales, el mismo Drogba anotó el tiro definitivo que selló el título.
                 <br><br>
-
                 Aquella noche, el Chelsea escribió su nombre en la historia del fútbol europeo, demostrando que la determinación,
                 la fe y el trabajo en equipo pueden derribar incluso las expectativas más adversas.
                 </p>
@@ -310,6 +321,8 @@
     <footer>
         &copy; 2025 DT Zone | Todos los derechos reservados.
     </footer>
+
+    <button id="btnArriba" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
 
     <script>
         function toggleMenu() {
@@ -337,7 +350,6 @@
             { fecha: "Sáb., 20 Dic.", partido: "Newcastle United vs Chelsea", hora: "8:30 AM", competencia: "Premier League" },
             { fecha: "Sáb., 27 Dic.", partido: "Chelsea vs Aston Villa", hora: "1:30 PM", competencia: "Premier League" },
             { fecha: "Mar., 30 Dic.", partido: "Chelsea vs AFC Bournemouth", hora: "3:30 PM", competencia: "Premier League" }
-
         ];
 
         const tabla = document.getElementById("tabla-partidos");
@@ -354,6 +366,11 @@
         }
 
         cargarPartidos();
+        
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('btnArriba');
+            btn.style.display = (window.scrollY > 300) ? "block" : "none";
+        });
     </script>
 </body>
 </html>

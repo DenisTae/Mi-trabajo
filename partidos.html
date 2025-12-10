@@ -183,6 +183,28 @@
                 font-size: 1.3rem;
             }
         }
+
+        #btn-top {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: #C9A23F;
+            color: #012169;
+            padding: 13px 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        #btn-top:hover {
+            background: #f4d03f;
+        }
     </style>
 </head>
 <body>
@@ -306,6 +328,8 @@
         <p>&copy; 2025 DT Zone | Próximos Partidos</p>
     </footer>
 
+    <button id="btn-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+
     <script>
         function goHome() {
             window.location.href = "index.html";
@@ -341,6 +365,15 @@
                 document.body.appendChild(modal);
                 modal.addEventListener('click', () => modal.remove());
             });
+        });
+
+        window.addEventListener("scroll", function () {
+            var btn = document.getElementById("btn-top");
+            if (window.scrollY > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
         });
     </script>
 </body>
